@@ -2,6 +2,11 @@
   <section class="albums">
     <div class="container">
       <div class="row">
+        <div class="col-12 col-sm-6 col-lg"><AlbumCard/></div>
+        <div class="col-12 col-sm-6 col-lg"><AlbumCard/></div>
+        <div class="col-12 col-sm-6 col-lg"><AlbumCard/></div>
+        <div class="col-12 col-sm-6 col-lg"><AlbumCard/></div>
+        <div class="col-12 col-sm-6 col-lg"><AlbumCard/></div>
       </div>
     </div>
   </section>
@@ -9,9 +14,14 @@
 
 <script>
 import axios from 'axios';
+import AlbumCard from '../commons/AlbumCard.vue';
 
 export default {
   name: 'AlbumsSection',
+
+  components: {
+    AlbumCard,
+  },
 
   data() {
     return {
