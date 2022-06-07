@@ -8,7 +8,7 @@
 
 <script>
 export default {
- name: 'BaseHeader',
+    name: 'BaseHeader',
 }
 </script>
 

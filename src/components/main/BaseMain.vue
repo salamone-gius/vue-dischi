@@ -1,12 +1,19 @@
 <template>
   <main>
-      <div class="container"></div>
+      <div class="container">
+          <AlbumsSection/>
+      </div>
   </main>
 </template>
 
 <script>
+import AlbumsSection from './AlbumsSection.vue';
+
 export default {
-name: 'BaseMain'
+    name: 'BaseMain',
+    components: {
+        AlbumsSection
+    }
 }
 </script>
 
