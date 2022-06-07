@@ -1,22 +1,26 @@
 <template>
     <div class="album-card">
-        <img src="https://via.placeholder.com/350" alt="">
-        <h3>AlbumName</h3>
-        <h5>Artist</h5>
-        <h5>Year</h5>
+        <img :src="album.poster" :alt="album.title">
+        <h3>{{album.title}}</h3>
+        <h5>{{album.author}}</h5>
+        <h5>{{album.year}}</h5>
     </div>
 </template>
 
 <script>
 export default {
     name: 'AlbumCard',
+
+    props: {
+        album: Object,
+    }
 }
 </script>
 
 <style lang="scss" scoped>
 .album-card {
     background-color: var(--primary-color);
-    padding: 0.5rem;
+    padding: 1rem;
     text-align: center;
     text-transform: uppercase;
 

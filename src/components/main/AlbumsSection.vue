@@ -1,12 +1,8 @@
 <template>
   <section class="albums">
     <div class="container">
-      <div class="row">
-        <div class="col-12 col-sm-6 col-lg"><AlbumCard/></div>
-        <div class="col-12 col-sm-6 col-lg"><AlbumCard/></div>
-        <div class="col-12 col-sm-6 col-lg"><AlbumCard/></div>
-        <div class="col-12 col-sm-6 col-lg"><AlbumCard/></div>
-        <div class="col-12 col-sm-6 col-lg"><AlbumCard/></div>
+      <div class="row row-cols-lg-5">
+        <AlbumCard class="album-card col-12 col-sm-6 col-lg mb-5" v-for="(album, index) in albums" :key="index" :album="album"/>
       </div>
     </div>
   </section>

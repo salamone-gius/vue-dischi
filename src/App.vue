@@ -21,8 +21,4 @@ export default {
 <style lang="scss">
 @import './assets/style/global.scss';
 
-* {
-  border: 1px solid red;
-}
-
 </style>
