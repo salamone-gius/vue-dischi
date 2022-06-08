@@ -50,7 +50,11 @@ export default {
   methods: {
     filterGenres(genreSelected) {
       console.log(genreSelected);
-      this.albumsFiltered = this.albums.filter((album) => album.genre == genreSelected);
+      if (genreSelected == "All") {
+        this.albumsFiltered = this.albums;
+      } else {
+        this.albumsFiltered = this.albums.filter((album) => album.genre == genreSelected);
+      }
     }
   },
 }
