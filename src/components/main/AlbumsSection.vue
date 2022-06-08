@@ -3,7 +3,7 @@
     <div class="container">
       <GenreSelect class="genre-select" @selected="filterGenres"/>
       <div class="row row-cols-lg-5">
-        <AlbumCard class="album-card col-12 col-sm-6 col-lg mb-5" v-for="(album, index) in albums" :key="index" :album="album"/>
+        <AlbumCard class="album-card col-12 col-sm-6 col-lg mb-5" v-for="(album, index) in albumsFiltered" :key="index" :album="album"/>
       </div>
     </div>
   </section>
@@ -25,6 +25,7 @@ export default {
   data() {
     return {
       albums: [],
+      albumsFiltered: [],
     }
   },
 
@@ -48,6 +49,7 @@ export default {
   methods: {
     filterGenres(genreSelected) {
       console.log(genreSelected);
+      this.albumsFiltered = this.albums.filter((album) => album.genre == genreSelected);
     }
   },
 }
