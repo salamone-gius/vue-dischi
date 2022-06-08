@@ -20,6 +20,6 @@ export default {
 <style lang="scss" scoped>
 main {
     background-color: var(--secondary-color);
-    padding: 4rem 0;
+    padding: 2rem 0;
 }
 </style>

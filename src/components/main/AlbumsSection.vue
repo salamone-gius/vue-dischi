@@ -1,6 +1,7 @@
 <template>
   <section class="albums">
     <div class="container">
+      <GenreSelect class="genre-select"/>
       <div class="row row-cols-lg-5">
         <AlbumCard class="album-card col-12 col-sm-6 col-lg mb-5" v-for="(album, index) in albums" :key="index" :album="album"/>
       </div>
@@ -11,12 +12,14 @@
 <script>
 import axios from 'axios';
 import AlbumCard from '../commons/AlbumCard.vue';
+import GenreSelect from '../commons/GenreSelect.vue';
 
 export default {
   name: 'AlbumsSection',
 
   components: {
     AlbumCard,
+    GenreSelect,
   },
 
   data() {
@@ -45,7 +48,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-section.albums {
-  padding: 0.5rem 0;
-}
+
 </style>
