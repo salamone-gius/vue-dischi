@@ -1,7 +1,7 @@
 <template>
     <div class="form-group">
         <label for="select"><h4>Choose a genre:</h4></label>
-        <select class="form-control" name="select" id="select">
+        <select class="form-control" name="select" id="select" v-model="genreSelected">
             <option value="" disabled selected></option>
             <option value="Rock">Rock</option>
             <option value="Pop">Pop</option>
@@ -13,7 +13,13 @@
 
 <script>
 export default {
- name: 'GenreSelect',
+    name: 'GenreSelect',
+
+    data() {
+        return {
+            genreSelected: "",
+        }
+    }
 }
 </script>
 
