@@ -1,7 +1,7 @@
 <template>
   <section class="albums">
     <div class="container">
-      <GenreSelect class="genre-select"/>
+      <GenreSelect class="genre-select" @selected="filterGenres"/>
       <div class="row row-cols-lg-5">
         <AlbumCard class="album-card col-12 col-sm-6 col-lg mb-5" v-for="(album, index) in albums" :key="index" :album="album"/>
       </div>
@@ -43,6 +43,12 @@ export default {
     .then(() => {
       // always executed
     });
+  },
+
+  methods: {
+    filterGenres(genreSelected) {
+      console.log(genreSelected);
+    }
   },
 }
 </script>
