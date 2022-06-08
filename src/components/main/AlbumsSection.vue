@@ -27,7 +27,8 @@ export default {
   data() {
     return {
       albums: [],
-      albumsFiltered: [],
+      // albumsFiltered: [],
+      genreSelected: "",
     }
   },
 
@@ -52,13 +53,24 @@ export default {
   methods: {
     filterGenres(genreSelected) {
       console.log(genreSelected);
-      if (genreSelected == "All") {
-        this.albumsFiltered = this.albums;
-      } else {
-        this.albumsFiltered = this.albums.filter((album) => album.genre == genreSelected);
-      }
+      this.genreSelected = genreSelected;
+      // if (genreSelected == "All") {
+      //   this.albumsFiltered = this.albums;
+      // } else {
+      //   this.albumsFiltered = this.albums.filter((album) => album.genre == genreSelected);
+      // }
     }
   },
+
+  computed: {
+    albumsFiltered() {
+      if (this.genreSelected == "All" || this.genreSelected == "") {
+        return this.albums;
+      } else {
+        return this.albums.filter((album) => album.genre == this.genreSelected);
+      }
+    }
+  }
 }
 </script>
 
