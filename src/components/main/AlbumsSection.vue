@@ -2,8 +2,10 @@
   <section class="albums">
     <div class="container">
       <GenreSelect class="genre-select" @selected="filterGenres"/>
-      <div class="row row-cols-lg-5">
-        <AlbumCard class="album-card col-12 col-sm-6 col-lg mb-5" v-for="(album, index) in albumsFiltered" :key="index" :album="album"/>
+      <div class="row row-cols-lg-5 d-flex justify-content-center">
+        <div class="album-card col-12 col-sm-6 col-lg mb-5" v-for="(album, index) in albumsFiltered" :key="index">
+          <AlbumCard :album="album"/>
+        </div>
       </div>
     </div>
   </section>
@@ -61,5 +63,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.album-card {
+  height: 28.125rem;
+}
 </style>
